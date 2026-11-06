@@ -9,3 +9,10 @@
 .brand{color:var(--brand-gold)}.brand small{color:var(--ink)}.brand-mark{border-color:var(--brand-blue)}.small-seal{border-color:var(--brand-blue)}.service-strip{background:#eaf2f8}.service-card:hover{background:#eaf2f8}.card-top{color:var(--ink)}.academy-art{background:var(--sage)}.academy-art>p em{color:var(--brand-gold)}
 
 .steps b{color:#706848}
+
+/* Original brand symbol, displayed from the unchanged company logo. */
+.header .brand{gap:14px}
+.brand-logo{position:relative;display:block;flex:0 0 48px;width:48px;height:80px;overflow:hidden}
+.brand-logo img{position:absolute;width:135px;height:135px;max-width:none;left:-46px;top:-10px;object-fit:contain}
+@media(max-width:800px){.header .brand{gap:9px}.brand-logo{flex-basis:36px;width:36px;height:60px}.brand-logo img{width:101.25px;height:101.25px;left:-34.5px;top:-7.5px}}
+@media(max-width:420px){.header .brand{gap:7px;font-size:18px}.header .brand small{font-size:5.5px;letter-spacing:1.2px}.brand-logo{flex-basis:30px;width:30px;height:50px}.brand-logo img{width:84.375px;height:84.375px;left:-28.75px;top:-6.25px}.nav-row{gap:10px}}
