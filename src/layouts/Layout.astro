@@ -4,10 +4,24 @@ import site from '../data/site.json';
 const {title, description=site.intro} = Astro.props;
 const indexable=import.meta.env.PUBLIC_INDEXABLE==='true';
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const brandUrl = new URL('/', Astro.site).href;
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${brandUrl}#organization`,
+  name: site.name,
+  url: brandUrl,
+  logo: {'@type': 'ImageObject', url: new URL('/images/logo.png', Astro.site).href, width: 300, height: 300},
+  telephone: `+${site.phone}`,
+  email: site.email,
+  address: {'@type': 'PostalAddress', streetAddress: site.address, addressLocality: 'Medellín', addressRegion: 'Antioquia', addressCountry: 'CO'},
+  sameAs: [site.instagram],
+};
+const brandJson = JSON.stringify(organization).replace(/</g, '\\u003c');
 const nav=[['/','Inicio'],['/servicios/','Tratamientos'],['/cursos/','Cursos'],['/nosotros/','Nuestro equipo'],['/contacto/','Contacto']];
 const wa=`https://wa.me/${site.phone}?text=${encodeURIComponent('Hola, quiero solicitar una valoración en Facciale Sthetic.')}`;
 ---
-<!doctype html><html lang="es-CO"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} | Facciale Sthetic</title><meta name="description" content={description}/><meta name="robots" content={indexable?'index, follow':'noindex, nofollow'}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | Facciale Sthetic`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/images/logo.png',Astro.site)}/><link rel="icon" href="/images/logo.png"/></head>
+<!doctype html><html lang="es-CO"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} | Facciale Sthetic</title><meta name="description" content={description}/><meta name="robots" content={indexable?'index, follow':'noindex, nofollow'}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} | Facciale Sthetic`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/images/logo.png',Astro.site)}/><link rel="icon" href="/images/logo.png"/><script type="application/ld+json" set:html={brandJson} /></head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 {!indexable && <div class="preview-note">Propuesta de diseño · Versión de revisión · Los pagos en línea aún no están habilitados</div>}
