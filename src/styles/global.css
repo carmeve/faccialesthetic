@@ -37,3 +37,13 @@
 .academy .academy-art>p:not(.eyebrow){max-width:none;margin:0;font-size:clamp(26px,2.5vw,36px);line-height:1.25}
 @media(max-width:600px){.image-label{left:50%;right:auto;max-width:calc(100% - 36px)}.academy .academy-art>p:not(.eyebrow){font-size:28px}}
 @media(max-width:420px){.academy .academy-art>p:not(.eyebrow){font-size:32px}}
+
+/* Seamless right-to-left service ribbon. No scripts, images or slider library. */
+.service-marquee{overflow:hidden;width:100%}
+.service-track{display:flex;width:max-content;animation:service-ribbon 32s linear infinite}
+.service-group{display:flex;align-items:center;justify-content:space-around;flex:0 0 auto;width:max-content;min-width:100vw;list-style:none;margin:0;padding:0;color:var(--ink)}
+.service-group li{display:flex;align-items:center;justify-content:space-between;gap:clamp(28px,4vw,76px);margin:0;padding:22px clamp(22px,3vw,60px);white-space:nowrap;font-size:14px;line-height:1.6;font-weight:500}
+.service-separator{color:var(--gold);font-size:24px;font-weight:400;line-height:1}
+@keyframes service-ribbon{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.service-track{animation-duration:30s}.service-group li{font-size:13px;padding:19px 24px;gap:35px}.service-separator{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.service-track{animation:none;width:100%}.service-group{flex-wrap:wrap;justify-content:center;min-width:0;width:100%;padding-block:8px}.service-group[aria-hidden="true"]{display:none}.service-group li{padding:10px 18px;white-space:normal;gap:20px}}
