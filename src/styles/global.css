@@ -51,3 +51,10 @@
 @media(max-width:800px){.footer-grid h3{font-size:20px}}
 @media(max-width:600px){.service-track{animation-duration:30s}.service-group li{font-size:13px;padding:19px 24px;gap:35px}.service-separator{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.service-track{animation:none;width:100%}.service-group{flex-wrap:wrap;justify-content:center;min-width:0;width:100%;padding-block:8px}.service-group[aria-hidden="true"]{display:none}.service-group li{padding:10px 18px;white-space:normal;gap:20px}}
+
+/* Sticky navigation: translucent only once the header reaches the top. */
+.header-scroll-marker{height:1px;margin-bottom:-1px;pointer-events:none}
+.header{position:sticky;top:0;z-index:50;background:#fff;transition:background-color .2s ease,box-shadow .2s ease}
+.header.is-scrolled{background:rgba(255,255,255,.88);box-shadow:0 4px 20px rgba(40,71,95,.08);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.header.is-scrolled{background:rgba(255,255,255,.97)}}
+@media(prefers-reduced-transparency:reduce){.header.is-scrolled{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}}
