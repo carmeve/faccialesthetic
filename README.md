@@ -4,7 +4,7 @@ Primera versión de revisión con Astro, CSS y JavaScript. Código portable, sin
 
 ## Abrir en VS Code
 
-Requiere Node.js 22.12 o superior y Git.
+Requiere Node.js 22.23.4 o superior y Git.
 
 ```bash
 git clone https://github.com/carmeve/faccialesthetic.git
@@ -64,3 +64,7 @@ node scripts/check-build.mjs
 ```
 
 No añadir claves privadas a este repositorio público. Las claves de pagos deben residir únicamente en el gestor de secretos del servidor que procese pedidos.
+
+## Actualización de dependencias
+
+Astro está fijado en 7.4.7 y requiere Node.js 22.23.4 o superior. Después de descargar cambios con `git pull --ff-only`, ejecutar `npm ci` para instalar las versiones exactas del archivo de bloqueo. Antes de actualizar dependencias, ejecutar `npm audit`, `npm test` y `npm run build`.
