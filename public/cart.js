@@ -1,0 +1,3 @@
+export function readCart(storage,products){try{const raw=JSON.parse(storage.getItem('facciale-cart')||'{}');if(!raw||typeof raw!=='object'||Array.isArray(raw))return {};return Object.fromEntries(products.filter(p=>Number.isInteger(raw[p.id])&&raw[p.id]>0&&raw[p.id]<=20).map(p=>[p.id,raw[p.id]]));}catch{return {};}}
+export function changeQuantity(cart,id,delta,products){if(!products.some(p=>p.id===id)||!Number.isInteger(delta))return {...cart};const next={...cart};const quantity=Math.max(0,Math.min(20,(next[id]||0)+delta));if(quantity)next[id]=quantity;else delete next[id];return next;}
+export function cartTotal(cart,products){return products.reduce((total,p)=>total+p.price*(cart[p.id]||0),0);}

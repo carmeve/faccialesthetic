@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readCart,changeQuantity,cartTotal} from '../public/cart.js';
+const products=[{id:'a',price:99000},{id:'b',price:72900}];
+test('recupera una selección válida y rechaza datos alterados',()=>{assert.deepEqual(readCart({getItem:()=>'{"a":2,"b":-1,"unknown":3}'},products),{a:2});assert.deepEqual(readCart({getItem:()=>'{invalid'},products),{});assert.deepEqual(readCart({getItem:()=>'{"a":2.5}'},products),{});});
+test('cantidades acotadas, eliminación y total en pesos',()=>{let c=changeQuantity({},'a',2,products);c=changeQuantity(c,'b',1,products);assert.equal(cartTotal(c,products),270900);assert.deepEqual(changeQuantity(c,'b',-1,products),{a:2});assert.equal(changeQuantity(c,'a',30,products).a,20);assert.deepEqual(changeQuantity(c,'fake',1,products),c);});

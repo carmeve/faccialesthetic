@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro';import services from '../../data/services.json';
+export function getStaticPaths(){return services.map(service=>({params:{slug:service.slug},props:{service}}));}
+const {service:s}=Astro.props;
+---
+<Layout title={`${s.name} en Medellín`} description={s.description}><section class="page-heading shell"><a class="text-link" href="/servicios/">← Todas las áreas</a><p class="eyebrow">{s.tag}</p><h1>{s.name}<br/><em>con atención personal.</em></h1><p>{s.description}</p></section><section class="shell section detail-grid"><img src={s.image} alt={`Área de ${s.name}`} width="700" height="700"/><div><h2>Comencemos<br/>por conocerte.</h2><p>{s.detail}</p><h3>Consulta por</h3><ul>{s.options.map(o=><li>{o}</li>)}</ul><a class="button" href={`/contacto/?servicio=${encodeURIComponent(s.name)}`}>Solicitar valoración ↗</a><p class="fine">La información del sitio es general. No sustituye una valoración ni garantiza resultados.</p></div></section></Layout>
