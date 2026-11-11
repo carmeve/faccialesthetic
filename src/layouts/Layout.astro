@@ -40,6 +40,21 @@ if(header && marker && 'IntersectionObserver' in window){
   });
   observer.observe(marker);
 }
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const actions = document.querySelectorAll<HTMLElement>(
+    '.button:not(:disabled):not([aria-disabled="true"]), a.text-link, a.card-bottom, a.shop-link',
+  );
+  const actionObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.intersectionRatio >= 0.35) {
+        entry.target.classList.add('cta-in-view');
+        actionObserver.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.35 });
+  actions.forEach(action => actionObserver.observe(action));
+}
 const toggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
 toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));document.querySelector('#main-nav')?.classList.toggle('open',!open);});
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){toggle?.setAttribute('aria-expanded','false');document.querySelector('#main-nav')?.classList.remove('open');}});
