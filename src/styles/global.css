@@ -107,3 +107,40 @@
 @media (prefers-reduced-motion: reduce) {
   .button:hover { transform: none; }
 }
+
+.course-button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 18px;
+  padding: 10px 15px 10px 18px;
+  border-radius: 7px;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.course-button-arrow {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1dfb6;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.course-button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .course-button-arrow { transition: translate .2s ease; }
+  .course-button:hover .course-button-arrow { translate: 2px 0; }
+}
