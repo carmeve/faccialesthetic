@@ -1,0 +1,7 @@
+{
+  "name": "IQ",
+  "price": 72900,
+  "image": "/images/productos/iq.avif",
+  "category": "src/content/catalogo/categorias/catalogo-general.json",
+  "status": "published"
+}

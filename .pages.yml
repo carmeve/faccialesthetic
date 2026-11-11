@@ -1,0 +1,64 @@
+media:
+  input: src/assets/productos
+  output: /images/productos
+  extensions: [avif, webp, jpg, jpeg, png]
+
+content:
+  - name: categorias
+    label: Categorías
+    type: collection
+    path: src/content/catalogo/categorias
+    format: json
+    operations: { rename: false }
+    filename:
+      template: "{primary}.json"
+      field: create
+    view:
+      primary: name
+      fields: [name]
+    fields:
+      - { name: name, label: Nombre, type: string, required: true }
+
+  - name: productos
+    label: Productos
+    type: collection
+    path: src/content/catalogo/productos
+    format: json
+    operations: { rename: false }
+    filename:
+      template: "{primary}.json"
+      field: create
+    view:
+      primary: name
+      fields: [name, category, price, status]
+    fields:
+      - { name: name, label: Nombre, type: string, required: true }
+      - name: category
+        label: Categoría
+        type: reference
+        required: true
+        options:
+          collection: categorias
+          label: "{name}"
+          value: "{path}"
+      - { name: description, label: Descripción, type: text }
+      - name: price
+        label: Precio en pesos colombianos
+        type: number
+        required: true
+        options: { min: 0, step: 1 }
+      - { name: image, label: Foto principal, type: image, required: true }
+      - name: gallery
+        label: Fotos adicionales
+        type: image
+        options: { multiple: true, max: 6 }
+      - name: status
+        label: Estado
+        type: select
+        required: true
+        default: draft
+        options:
+          values:
+            - { value: draft, label: Borrador }
+            - { value: published, label: Publicado }
+            - { value: unavailable, label: No disponible }

@@ -1,0 +1,7 @@
+{
+  "name": "Fingrat Slim",
+  "price": 99000,
+  "image": "/images/productos/fingrat.avif",
+  "category": "src/content/catalogo/categorias/catalogo-general.json",
+  "status": "published"
+}
