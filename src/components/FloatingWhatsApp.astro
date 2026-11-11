@@ -1,0 +1,116 @@
+---
+import site from '../data/site.json';
+
+const message = 'Hola, quisiera recibir información sobre Facciale Sthetic.';
+const chatUrl = `https://wa.me/${site.phone}?text=${encodeURIComponent(message)}`;
+---
+
+<div class="floating-whatsapp" data-floating-whatsapp>
+  <div class="greeting" data-wa-greeting hidden>
+    <button class="dismiss" type="button" aria-label="Cerrar saludo" data-wa-dismiss>×</button>
+    <p role="status">¡Hola! ¿Cómo podemos ayudarte? Escríbenos y te orientamos.</p>
+  </div>
+  <a class="whatsapp-link" href={chatUrl} target="_blank" rel="noopener" aria-label="Escribir a Facciale Sthetic por WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
+</div>
+
+<script>
+  const widget = document.querySelector('[data-floating-whatsapp]');
+  const greeting = widget?.querySelector<HTMLElement>('[data-wa-greeting]');
+  const dismiss = widget?.querySelector<HTMLButtonElement>('[data-wa-dismiss]');
+  const startedKey = 'facciale-whatsapp-started';
+  const shownKey = 'facciale-whatsapp-shown';
+
+  function readSession(key: string) {
+    try { return sessionStorage.getItem(key); } catch { return null; }
+  }
+
+  function writeSession(key: string, value: string) {
+    try { sessionStorage.setItem(key, value); } catch { /* Storage is optional. */ }
+  }
+
+  if (greeting && dismiss && !readSession(shownKey)) {
+    const started = Number(readSession(startedKey)) || Date.now();
+    writeSession(startedKey, String(started));
+    const deadline = started + 15_000;
+    let timer: number;
+
+    function scheduleGreeting() {
+      window.clearTimeout(timer);
+      if (document.hidden) return;
+      timer = window.setTimeout(() => {
+        if (document.hidden || !greeting) return;
+        greeting.hidden = false;
+        writeSession(shownKey, '1');
+        document.removeEventListener('visibilitychange', scheduleGreeting);
+      }, Math.max(0, deadline - Date.now()));
+    }
+
+    dismiss.addEventListener('click', () => { greeting.hidden = true; });
+    document.addEventListener('visibilitychange', scheduleGreeting);
+    scheduleGreeting();
+  }
+</script>
+
+<style>
+  .floating-whatsapp {
+    position: fixed;
+    z-index: 40;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    max-width: calc(100vw - 32px);
+    pointer-events: none;
+  }
+
+  .whatsapp-link,
+  .greeting { pointer-events: auto; }
+
+  .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 10px 17px;
+    border-radius: 999px;
+    background: #08644e;
+    color: #fff;
+    box-shadow: 0 4px 14px #17374733;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .whatsapp-link:hover { background: #074e3e; }
+
+  .greeting {
+    position: relative;
+    width: min(280px, calc(100vw - 32px));
+    padding: 14px 44px 14px 15px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 18px #17374726;
+    color: var(--ink);
+  }
+
+  .greeting p { margin: 0; font-size: 14px; line-height: 1.5; }
+
+  .dismiss {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+  .whatsapp-link:focus-visible,
+  .dismiss:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+</style>
