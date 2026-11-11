@@ -62,7 +62,20 @@
 /* Draw attention once as each action becomes visible. */
 @media (prefers-reduced-motion: no-preference) {
   .button.cta-in-view {
+    position: relative;
+    overflow: hidden;
     animation: cta-button-attention 720ms ease-out;
+  }
+
+  .button.cta-in-view::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 -42%;
+    width: 36%;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(236, 202, 128, .42), rgba(255, 248, 222, .32), transparent);
+    transform: skewX(-22deg);
+    animation: cta-gold-sweep 720ms ease-out;
   }
 
   :is(a.text-link, a.card-bottom, a.shop-link).cta-in-view {
@@ -78,6 +91,12 @@
   0% { scale: 1; box-shadow: 0 0 0 0 rgba(138, 119, 75, .42); }
   35% { scale: 1.035; }
   100% { scale: 1; box-shadow: 0 0 0 9px rgba(138, 119, 75, 0); }
+}
+
+@keyframes cta-gold-sweep {
+  0% { transform: translateX(0) skewX(-22deg); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translateX(440%) skewX(-22deg); opacity: 0; }
 }
 
 @keyframes cta-link-attention {
