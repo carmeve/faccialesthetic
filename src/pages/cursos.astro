@@ -1,5 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';import site from '../data/site.json';
-const wa=`https://wa.me/${site.phone}?text=${encodeURIComponent('Hola, quiero conocer los cursos disponibles, requisitos, temario, docentes, fechas, precio y tipo de certificación.')}`;
+import Layout from '../layouts/Layout.astro';
+import site from '../data/site.json';
+import courses from '../data/courses.json';
+
+const categories = [...new Set(courses.map(course => course.category))];
+const contactUrl = `https://wa.me/${site.phone}?text=${encodeURIComponent('Hola, quiero conocer la oferta de cursos presenciales de Facciale Sthetic en Medellín.')}`;
 ---
-<Layout title="Cursos y formación" description="Solicita información sobre la oferta de formación de Facciale Sthetic: contenidos, requisitos, docentes, fechas y certificación."><section class="page-heading shell"><p class="eyebrow">Facciale / FORMACIÓN</p><h1>Aprender con propósito.<br/><em>Crecer con criterio.</em></h1><p>Un recorrido diferente para quienes buscan formación. Conoce la oferta disponible y resuelve tus dudas antes de inscribirte.</p><a class="button" href={wa} target="_blank" rel="noopener">Solicitar oferta de cursos ↗</a></section><section class="section shell"><div class="section-top"><h2>Antes de elegir<br/><em>tu próximo curso.</em></h2><p>Solicita estos detalles para tomar una decisión informada.</p></div><div class="service-grid">{[['01','Contenido y requisitos','Consulta el temario, la modalidad, la duración y el perfil al que está dirigido.'],['02','Docentes y práctica','Conoce quién imparte la formación y qué actividades incluye.'],['03','Fechas y certificación','Confirma próximas fechas, precio, condiciones de inscripción y alcance del certificado.']].map(([n,t,d])=><article class="service-card"><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section></Layout>
+
+<Layout
+  title="Cursos presenciales de estética facial y corporal en Medellín"
+  description="Explora 15 cursos presenciales de Facciale Sthetic en Medellín, desde toxina botulínica y ácido hialurónico hasta micropigmentación y estética corporal."
+>
+  <section class="page-heading shell">
+    <p class="eyebrow">Facciale / Formación</p>
+    <h1>Cursos presenciales de estética facial y corporal en Medellín</h1>
+    <p>Formación práctica, avanzada y personalizada en armonización facial, cuidado de la piel y estética corporal. Explora el catálogo y consulta qué curso se ajusta a tu perfil profesional.</p>
+    <a class="button" href={contactUrl} target="_blank" rel="noopener">Consultar fechas y requisitos ↗</a>
+  </section>
+  {categories.map(category => (
+    <section class="section shell">
+      <div class="section-top"><h2>{category}</h2></div>
+      <div class="service-grid">
+        {courses.filter(course => course.category === category).map(course => (
+          <article class="service-card">
+            <h3><a href={`/cursos/${course.slug}/`}>{course.name}</a></h3>
+            <p>{course.description}</p>
+            <a class="card-bottom" href={`/cursos/${course.slug}/`} aria-label={`Ver curso de ${course.name}`}>Ver curso <span aria-hidden="true">↗</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
+  <section class="section shell">
+    <div class="section-top"><h2>Antes de inscribirte</h2></div>
+    <p>Confirma con Facciale Sthetic el temario vigente, los requisitos de ingreso, la duración, el precio y si el curso ofrece certificado. Los requisitos para las formaciones sobre procedimientos invasivos dependen del perfil profesional.</p>
+    <p>Consulta la sede y las indicaciones para llegar en <a class="text-link" href="/contacto/">Contacto y ubicación en Medellín</a>.</p>
+  </section>
+</Layout>

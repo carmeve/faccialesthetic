@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "toxina-botulinica",
+    "name": "Toxina botulínica (bótox)",
+    "category": "Armonización facial",
+    "description": "Formación sobre el papel de la toxina botulínica en la armonización facial y la diferencia entre este procedimiento y los tratamientos de relleno. El enfoque parte de la valoración facial, la conversación sobre expectativas y el reconocimiento de situaciones que requieren evaluación clínica adicional. La revisión de casos permite relacionar el objetivo estético con la documentación y el seguimiento.",
+    "question": "Consulta el perfil profesional requerido y cómo se organiza la práctica antes de reservar."
+  },
+  {
+    "slug": "acido-hialuronico",
+    "name": "Ácido hialurónico",
+    "category": "Armonización facial",
+    "description": "Curso centrado en la valoración y la planificación estética de tratamientos con ácido hialurónico. Explora cómo se analiza la proporción facial, qué preguntas ayudan a entender el objetivo del paciente y cómo se documentan antecedentes y expectativas. Se distingue entre restaurar volumen, definir contornos y valorar si otra opción resulta más apropiada.",
+    "question": "Solicita el temario para conocer las áreas faciales que se abordan y el alcance de la práctica."
+  },
+  {
+    "slug": "perfilacion-de-labios",
+    "name": "Perfilación de labios",
+    "category": "Armonización facial",
+    "description": "Formación enfocada en el análisis estético de los labios y su relación con el conjunto del rostro. Propone revisar el contorno, la simetría y las proporciones como puntos de partida para conversar sobre el resultado esperado. También aborda la diferencia entre definición y aumento de volumen, y la importancia de comunicar límites y cuidados de seguimiento.",
+    "question": "Consulta los conocimientos previos, los materiales y la modalidad de práctica."
+  },
+  {
+    "slug": "rinomodelacion",
+    "name": "Rinomodelación",
+    "category": "Armonización facial",
+    "description": "Curso orientado al análisis del perfil nasal dentro de la armonía facial. Revisa qué distingue la rinomodelación estética de la cirugía y de la atención de problemas funcionales, y por qué la valoración profesional determina si el procedimiento es adecuado. El enfoque incluye expectativas realistas, riesgos, documentación y criterios de remisión.",
+    "question": "Confirma el perfil de ingreso y la experiencia previa solicitada para esta formación."
+  },
+  {
+    "slug": "fibroblast-plasma-pen",
+    "name": "Fibroblast (Plasma Pen)",
+    "category": "Piel y micropigmentación",
+    "description": "Formación sobre los fundamentos del Plasma Pen y su lugar entre los procedimientos estéticos de la piel. El enfoque incluye valoración cutánea, antecedentes, características de la zona y conversación sobre posibles cambios de pigmentación o cicatrización. También diferencia las expectativas del paciente de los resultados que pueden discutirse durante una valoración individual.",
+    "question": "Pregunta por el equipo utilizado, la bioseguridad y los requisitos de la práctica."
+  },
+  {
+    "slug": "plasma-rico-en-plaquetas",
+    "name": "Plasma rico en plaquetas (PRP)",
+    "category": "Armonización facial",
+    "description": "Curso sobre los fundamentos del plasma rico en plaquetas y el contexto clínico en el que se valora su uso. La formación se orienta a comprender la selección de casos, la información que debe recibir el paciente y la importancia de la bioseguridad, la trazabilidad y el seguimiento en procedimientos que involucran material biológico.",
+    "question": "Solicita el temario y confirma qué formación sanitaria se exige para participar."
+  },
+  {
+    "slug": "dermapen-bb-glow",
+    "name": "Dermapen y BB Glow",
+    "category": "Piel y micropigmentación",
+    "description": "Formación sobre microneedling con Dermapen y BB Glow, con énfasis en distinguir sus objetivos, productos y consideraciones de seguridad. Parte de la valoración de la piel y de la conversación sobre sensibilidad, antecedentes y expectativas. Incluye criterios para revisar la idoneidad de un producto y reconocer cuándo corresponde posponer o remitir un caso.",
+    "question": "Confirma cómo se distribuye el curso entre Dermapen y BB Glow y qué materiales se requieren."
+  },
+  {
+    "slug": "hilos-de-colageno",
+    "name": "Hilos de colágeno espiculados faciales y corporales",
+    "category": "Armonización facial",
+    "description": "Curso centrado en los fundamentos de los hilos espiculados y en las diferencias de valoración entre zonas faciales y corporales. Explora cómo se consideran la calidad del tejido, el objetivo estético y las expectativas de cambio antes de decidir si una persona requiere valoración adicional. El enfoque incorpora documentación, comunicación de riesgos y seguimiento.",
+    "question": "Pregunta qué tipos de hilos y zonas contempla el temario y qué perfil profesional se requiere."
+  },
+  {
+    "slug": "micropigmentacion-facial",
+    "name": "Micropigmentación facial",
+    "category": "Piel y micropigmentación",
+    "description": "Formación sobre diseño facial, color y valoración previa a la micropigmentación. Revisa cómo las proporciones del rostro y las preferencias de cada persona orientan el diseño, además de la importancia del consentimiento y la higiene. Se presta atención a la comunicación sobre cicatrización, evolución del color y condiciones para valorar un retoque.",
+    "question": "Solicita el detalle de las zonas incluidas, los materiales y el nivel de experiencia esperado."
+  },
+  {
+    "slug": "micropigmentacion-paramedica",
+    "name": "Micropigmentación paramédica",
+    "category": "Piel y micropigmentación",
+    "description": "Curso enfocado en el camuflaje visual mediante micropigmentación paramédica. Examina la importancia de valorar el estado del tejido, la estabilidad del área y la correspondencia del tono antes de plantear un objetivo estético. También aborda cómo conversar sobre los límites del camuflaje y cuándo se requiere valoración por otro profesional.",
+    "question": "Pregunta qué casos contempla la formación y qué antecedentes o autorizaciones se revisan para la práctica."
+  },
+  {
+    "slug": "reduccion-de-medidas-corporales",
+    "name": "Reducción de medidas corporales",
+    "category": "Estética corporal y otras formaciones",
+    "description": "Formación sobre la valoración estética corporal y la definición de objetivos medibles. Explora cómo registrar medidas de forma consistente, documentar el punto de partida y conversar sobre expectativas y seguimiento. La propuesta diferencia el trabajo estético sobre el contorno corporal de la atención clínica del peso o de condiciones de salud.",
+    "question": "Solicita el temario para confirmar qué técnicas o equipos se incluyen y qué preparación se requiere."
+  },
+  {
+    "slug": "escleroterapia",
+    "name": "Escleroterapia",
+    "category": "Estética corporal y otras formaciones",
+    "description": "Curso orientado a comprender la escleroterapia en su contexto clínico y la importancia de una valoración vascular previa. Examina criterios generales de selección y remisión, así como la comunicación de riesgos, el consentimiento y el seguimiento. La revisión de casos ayuda a entender por qué el aspecto de una vena por sí solo no define la indicación.",
+    "question": "Confirma los requisitos profesionales y el alcance de la formación presencial antes de inscribirte."
+  },
+  {
+    "slug": "sueroterapia",
+    "name": "Sueroterapia",
+    "category": "Estética corporal y otras formaciones",
+    "description": "Formación sobre el contexto clínico de la sueroterapia, con énfasis en indicación, revisión de antecedentes y seguridad en la atención. El enfoque considera la importancia de informar al paciente, documentar decisiones y reconocer situaciones que requieren supervisión o remisión. Los contenidos se presentan desde el criterio profesional y el seguimiento.",
+    "question": "Solicita los requisitos de ingreso, el alcance del temario y las condiciones de práctica."
+  },
+  {
+    "slug": "terapia-neural",
+    "name": "Terapia neural",
+    "category": "Estética corporal y otras formaciones",
+    "description": "Curso sobre los fundamentos y el contexto profesional de la terapia neural. La descripción de la formación se centra en la evaluación previa, el análisis crítico de las indicaciones y de la evidencia disponible, y la comunicación de riesgos y límites. La revisión de casos permite discutir qué información debe documentarse y cuándo corresponde remitir.",
+    "question": "Consulta el perfil profesional admitido, los objetivos del curso y las condiciones de práctica."
+  },
+  {
+    "slug": "camuflaje-de-estrias",
+    "name": "Camuflaje de estrías",
+    "category": "Piel y micropigmentación",
+    "description": "Formación centrada en la valoración estética de estrías y en los criterios para plantear un camuflaje visual. Revisa cómo se observan el tono y la textura de la piel, qué información se reúne en la consulta y cómo se conversa sobre cambios de color, cicatrización y límites del resultado. El enfoque incluye seguimiento y registro de la evolución.",
+    "question": "Confirma qué métodos de camuflaje se estudian y qué materiales o conocimientos previos se solicitan."
+  }
+]
