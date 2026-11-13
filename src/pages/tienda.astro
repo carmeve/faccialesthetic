@@ -61,7 +61,7 @@ const money=(n:number)=>new Intl.NumberFormat('es-CO',{style:'currency',currency
           ))}</div>
         </details>}
         {product.status === 'published'
-          ? <button type="button" class="button add-product" data-id={product.id}>Añadir a mi consulta <span aria-hidden="true">+</span></button>
+          ? <button type="button" class="button add-product" data-id={product.id}>Agregar al carrito <span aria-hidden="true">+</span></button>
           : <p class="product-availability">No disponible</p>}
       </article>
     ))}
