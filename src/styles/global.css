@@ -144,3 +144,12 @@
   .course-button-arrow { transition: translate .2s ease; }
   .course-button:hover .course-button-arrow { translate: 2px 0; }
 }
+
+/* Mantiene completo el retrato de Ana en Tratamientos y Psicología. */
+.service-list img[src="/images/ana-retrato.avif"],
+.detail-grid > img[src="/images/ana-retrato.avif"] {
+  height: auto;
+  max-height: 510px;
+  object-fit: contain;
+  object-position: center;
+}
